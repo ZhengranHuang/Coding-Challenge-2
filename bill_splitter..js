@@ -18,15 +18,16 @@ function calcualteTip(bill){
 console.log("CalcualteTip Function Output: $", calcualteTip(100));
 
 //Task4: Utilize Arrays
-let bills = [275, 40, 430];
+let bills = [125, 555, 44];
 const tips = bills.map(bill => calcualteTip(bill));
-
-function TotalBill(bill){
-    return bill >= 50 && bill <= 300 ? bill*0.15+bill : bill*0.2+bill
-}
-const totals = bills.map(bill => TotalBill(bill));
-
+const totals = bills.reduce(function summarize(bills, tips, index) {
+    console.log(index);
+    return bills + tips;
+})
 
 console.log("bills(array)", bills);
 console.log("tips(array)", tips);
 console.log("totals(array)", totals);
+
+//Task5:Test Data
+//change numbers in bills array (275, 40, and 430) to (125, 555, and 44)
